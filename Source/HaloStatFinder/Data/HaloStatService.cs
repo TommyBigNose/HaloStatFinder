@@ -11,15 +11,16 @@ namespace HaloStatFinder.Data
 {
 	public class HaloStatService : IHaloStatService
 	{
-		public async Task<HaloStatModel> GetHalo2StatsFromBungie(string gamerTag)
+		#region Halo2
+		public async Task<Halo2StatModel> GetHalo2StatsFromBungie(string gamerTag)
 		{
-			HaloStatModel haloStatModel = new HaloStatModel();
+			Halo2StatModel haloStatModel = new Halo2StatModel();
 
 			if (string.IsNullOrWhiteSpace(gamerTag)) return await Task.FromResult(haloStatModel);
 			else
 			{
 				WebClient client = new WebClient();
-				string downloadedString = client.DownloadString("https://halo.bungie.net/stats/playerstatshalo2.aspx?player=" + gamerTag);
+				string downloadedString = client.DownloadString(Constants.Halo2Constants.UrlBase + gamerTag);
 
 				HtmlDocument doc = new HtmlDocument();
 				doc.LoadHtml(downloadedString);
@@ -36,9 +37,6 @@ namespace HaloStatFinder.Data
 			}
 		}
 
-		/*
-		 * Utility functions
-		 */
 		private List<string> GetCleanAndSplitHalo2StatsFromBungie(string htmlStats)
 		{
 			//return htmlStats.Replace("nbsp", "").Replace(";", "").Replace("|", "").Replace("&", "");
@@ -50,9 +48,9 @@ namespace HaloStatFinder.Data
 			return splitString;
 		}
 
-		private HaloStatModel ParseHalo2StatsFromBungie(List<string> htmlStats)
+		private Halo2StatModel ParseHalo2StatsFromBungie(List<string> htmlStats)
 		{
-			HaloStatModel haloStatModel = new HaloStatModel();
+			Halo2StatModel haloStatModel = new Halo2StatModel();
 
 			foreach (string stat in htmlStats)
 			{
@@ -80,5 +78,33 @@ namespace HaloStatFinder.Data
 
 			return haloStatModel;
 		}
+		#endregion
+
+		#region Halo3
+		public async Task<Halo3StatModel> GetHalo3StatsFromBungie(string gamerTag)
+		{
+			Halo3StatModel haloStatModel = new Halo3StatModel();
+
+			if (string.IsNullOrWhiteSpace(gamerTag)) return await Task.FromResult(haloStatModel);
+			else
+			{
+				WebClient client = new WebClient();
+				string downloadedString = client.DownloadString(Constants.Halo3Constants.UrlBase + gamerTag);
+
+				HtmlDocument doc = new HtmlDocument();
+				doc.LoadHtml(downloadedString);
+
+				// TODO: This currently gets the right divs, but it also grabs others that I don't need.
+				// Need to collect the ones that I need and then parse what I need out of them
+				foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//div[contains(@class, 'halo3')]"))
+				{
+					string value = node.InnerText;
+					Console.WriteLine(value);
+				}
+
+				return await Task.FromResult(haloStatModel);
+			}
+		}
+		#endregion
 	}
 }

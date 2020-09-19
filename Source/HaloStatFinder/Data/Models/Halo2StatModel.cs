@@ -1,6 +1,6 @@
 ﻿namespace HaloStatFinder.Data.Models
 {
-	public class HaloStatModel
+	public class Halo2StatModel
 	{
 		public int TotalGames { get; set; }
 		public string LastPlayed { get; set; }

@@ -32,7 +32,7 @@ namespace HaloStatFinder.Tests.Data
 			// Do nothing
 
 			// Act
-			HaloStatModel result = await _sut.GetHalo2StatsFromBungie(gamerTag);
+			Halo2StatModel result = await _sut.GetHalo2StatsFromBungie(gamerTag);
 
 			// Assert
 			Assert.IsTrue(result.TotalGames == 5313);
@@ -40,6 +40,23 @@ namespace HaloStatFinder.Tests.Data
 			Assert.IsTrue(result.TotalKills == 41131);
 			Assert.IsTrue(result.TotalDeaths == 28649);
 			Assert.IsTrue(result.TotalAssists == 9791);
+		}
+
+		[TestCase("SageOfChaos")]
+		/**
+		 * SageOfChaos : Total Halo 3 Games: Total Games: 1720
+		 */
+		public async Task GetHalo3StatsFromBungie_Goldenflow(string gamerTag)
+		{
+
+			// Arrange
+			// Do nothing
+
+			// Act
+			Halo3StatModel result = await _sut.GetHalo3StatsFromBungie(gamerTag);
+
+			// Assert
+			Assert.IsTrue(result.TotalGames == 1720);
 		}
 	}
 }
