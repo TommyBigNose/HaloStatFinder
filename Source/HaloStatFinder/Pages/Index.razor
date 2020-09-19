@@ -1,0 +1,76 @@
+﻿@page "/"
+
+@using System.Net;
+@using HtmlAgilityPack;
+@using HaloStatFinder.Data
+@using HaloStatFinder.Data.Models
+@inject HaloStatService HaloService
+
+<h1>Old Halo Stat Finder</h1>
+
+Enter your GamerTag:
+<input type="text" @bind="@gamerTag" />
+<br />
+<button id="getStats" class="btn btn-primary" @onclick="GetStats">Get Stats</button>
+<br />
+<br />
+<h2>Halo 2 Stats</h2>
+<table class="table table-striped" style="width:33%;">
+    <tr>
+        <td>
+            Total Games
+        </td>
+        <td>
+            @halo2Stats.TotalGames
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Last Played
+        </td>
+        <td>
+            @halo2Stats.LastPlayed
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Total Kills
+        </td>
+        <td>
+            @halo2Stats.TotalKills
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Total Deaths
+        </td>
+        <td>
+            @halo2Stats.TotalDeaths
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Total Assists
+        </td>
+        <td>
+            @halo2Stats.TotalAssists
+        </td>
+    </tr>
+</table>
+
+
+@code {
+
+    public string gamerTag = "";
+    HaloStatModel halo2Stats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        halo2Stats = await HaloService.GetHalo2StatsFromBungie(gamerTag);
+    }
+
+    public async Task GetStats()
+    {
+        halo2Stats = await HaloService.GetHalo2StatsFromBungie(gamerTag);
+    }
+}
