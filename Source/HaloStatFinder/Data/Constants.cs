@@ -16,16 +16,16 @@
 		{
 			public const string UrlBase = "https://halo.bungie.net/stats/halo3/careerstats.aspx?player=";
 			public const string TotalGames = "TotalGames";
-			public const string TotalExp = "TotalExp";
+			public const string TotalExp = "TotalEXP";
 			public const string HighestSkill = "HighestSkill";
-			public const string RankedKdRatio = "RankedKdRatio";
-			public const string TotalRankedKills = "TotalRankedKills";
-			public const string TotalRankedDeaths = "TotalRankedDeaths";
-			public const string TotalRankedAssists = "TotalRankedAssists";
-			public const string SocialKdRatio = "SocialKdRatio";
-			public const string TotalSocialKills = "TotalSocialKills";
-			public const string TotalSocialDeaths = "TotalSocialDeaths";
-			public const string TotalSocialAssists = "TotalSocialAssists";
+			public const string RankedKdRatio = "RankedK/DRatio";
+			public const string TotalRankedKills = "Kills";
+			public const string TotalRankedDeaths = "Deaths";
+			public const string TotalRankedGames = "Games";
+			public const string SocialKdRatio = "SocialK/DRatio";
+			public const string TotalSocialKills = "";
+			public const string TotalSocialDeaths = "";
+			public const string TotalSocialGames = "";
 		}
 	}
 }

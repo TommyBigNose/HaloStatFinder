@@ -8,10 +8,10 @@
 		public float RankedKdRatio { get; set; }
 		public int TotalRankedKills { get; set; }
 		public int TotalRankedDeaths { get; set; }
-		public int TotalRankedAssists { get; set; }
+		public int TotalRankedGames { get; set; }
 		public float SocialKdRatio { get; set; }
 		public int TotalSocialKills { get; set; }
 		public int TotalSocialDeaths { get; set; }
-		public int TotalSocialAssists { get; set; }
+		public int TotalSocialGames { get; set; }
 	}
 }

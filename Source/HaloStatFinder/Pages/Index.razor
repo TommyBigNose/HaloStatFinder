@@ -114,10 +114,10 @@ Enter your GamerTag:
         </tr>
         <tr>
             <td>
-                Total Ranked Assists
+                Total Ranked Games
             </td>
             <td>
-                @halo3Stats.TotalRankedAssists
+                @halo3Stats.TotalRankedGames
             </td>
         </tr>
 
@@ -147,10 +147,10 @@ Enter your GamerTag:
         </tr>
         <tr>
             <td>
-                Total Social Assists
+                Total Social Games
             </td>
             <td>
-                @halo3Stats.TotalSocialAssists
+                @halo3Stats.TotalSocialGames
             </td>
         </tr>
     </tbody>
@@ -167,6 +167,6 @@ Enter your GamerTag:
     public async Task GetStats()
     {
         halo2Stats = await HaloService.GetHalo2StatsFromBungie(gamerTag);
-        //halo3Stats = await HaloService.GetHalo3StatsFromBungie(gamerTag);
+        halo3Stats = await HaloService.GetHalo3StatsFromBungie(gamerTag);
     }
 }
