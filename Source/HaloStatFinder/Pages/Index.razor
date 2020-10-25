@@ -16,61 +16,157 @@ Enter your GamerTag:
 <br />
 <h2>Halo 2 Stats</h2>
 <table class="table table-striped" style="width:33%;">
-    <tr>
-        <td>
-            Total Games
-        </td>
-        <td>
-            @halo2Stats.TotalGames
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Last Played
-        </td>
-        <td>
-            @halo2Stats.LastPlayed
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total Kills
-        </td>
-        <td>
-            @halo2Stats.TotalKills
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total Deaths
-        </td>
-        <td>
-            @halo2Stats.TotalDeaths
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total Assists
-        </td>
-        <td>
-            @halo2Stats.TotalAssists
-        </td>
-    </tr>
+    <tbody>
+        <tr>
+            <td>
+                Total Games
+            </td>
+            <td>
+                @halo2Stats.TotalGames
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Played
+            </td>
+            <td>
+                @halo2Stats.LastPlayed
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Kills
+            </td>
+            <td>
+                @halo2Stats.TotalKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Deaths
+            </td>
+            <td>
+                @halo2Stats.TotalDeaths
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Assists
+            </td>
+            <td>
+                @halo2Stats.TotalAssists
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h2>Halo 3 Stats</h2>
+<table class="table table-striped" style="width:33%;">
+    <tbody>
+        <tr>
+            <td>
+                Total Games
+            </td>
+            <td>
+                @halo3Stats.TotalGames
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Exp
+            </td>
+            <td>
+                @halo3Stats.TotalExp
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Highest Skill
+            </td>
+            <td>
+                @halo3Stats.HighestSkill
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Ranked KD Ratio
+            </td>
+            <td>
+                @halo3Stats.RankedKdRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Ranked Kills
+            </td>
+            <td>
+                @halo3Stats.TotalRankedKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Ranked Deaths
+            </td>
+            <td>
+                @halo3Stats.TotalRankedDeaths
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Ranked Games
+            </td>
+            <td>
+                @halo3Stats.TotalRankedGames
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Social KD Ratio
+            </td>
+            <td>
+                @halo3Stats.SocialKdRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Social Kills
+            </td>
+            <td>
+                @halo3Stats.TotalSocialKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Social Deaths
+            </td>
+            <td>
+                @halo3Stats.TotalSocialDeaths
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Social Games
+            </td>
+            <td>
+                @halo3Stats.TotalSocialGames
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 
 @code {
 
     public string gamerTag = "";
-    HaloStatModel halo2Stats;
+    Halo2StatModel halo2Stats = new Halo2StatModel();
+    Halo3StatModel halo3Stats = new Halo3StatModel();
 
-    protected override async Task OnInitializedAsync()
-    {
-        halo2Stats = await HaloService.GetHalo2StatsFromBungie(gamerTag);
-    }
 
     public async Task GetStats()
     {
         halo2Stats = await HaloService.GetHalo2StatsFromBungie(gamerTag);
+        halo3Stats = await HaloService.GetHalo3StatsFromBungie(gamerTag);
     }
 }
