@@ -1,0 +1,106 @@
+﻿@page "/Halo3StatsTable"
+
+@using HaloStatFinder.Data
+@using HaloStatFinder.Data.Models
+@inject HaloStatService HaloService
+
+<h2>Halo 3 Stats</h2>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td>
+                Total Games
+            </td>
+            <td>
+                @Halo3Stats.TotalGames
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Exp
+            </td>
+            <td>
+                @Halo3Stats.TotalExp
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Highest Skill
+            </td>
+            <td>
+                @Halo3Stats.HighestSkill
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Ranked KD Ratio
+            </td>
+            <td>
+                @Halo3Stats.RankedKdRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Ranked Kills
+            </td>
+            <td>
+                @Halo3Stats.TotalRankedKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Ranked Deaths
+            </td>
+            <td>
+                @Halo3Stats.TotalRankedDeaths
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Ranked Games
+            </td>
+            <td>
+                @Halo3Stats.TotalRankedGames
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Social KD Ratio
+            </td>
+            <td>
+                @Halo3Stats.SocialKdRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Social Kills
+            </td>
+            <td>
+                @Halo3Stats.TotalSocialKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Social Deaths
+            </td>
+            <td>
+                @Halo3Stats.TotalSocialDeaths
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Social Games
+            </td>
+            <td>
+                @Halo3Stats.TotalSocialGames
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public Halo3StatModel Halo3Stats { get; set; }
+}

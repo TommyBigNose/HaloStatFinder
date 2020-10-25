@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HaloStatFinder", "HaloStatFinder\HaloStatFinder.csproj", "{A7B3FD7C-26D7-47BE-8573-4980A18F51DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaloStatFinder.Tests", "HaloStatFinder.Tests\HaloStatFinder.Tests.csproj", "{1464E167-5F71-4838-BB0F-FBEAA7398002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HaloStatFinder.Tests", "HaloStatFinder.Tests\HaloStatFinder.Tests.csproj", "{1464E167-5F71-4838-BB0F-FBEAA7398002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
