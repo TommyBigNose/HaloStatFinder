@@ -1,0 +1,114 @@
+﻿@page "/HaloReachStatsTable"
+
+@using HaloStatFinder.Data
+@using HaloStatFinder.Data.Models
+@inject HaloStatService HaloService
+
+<h2>Halo Reach Competitive Stats</h2>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td>
+                Total Games
+            </td>
+            <td>
+                @HaloReachStats.TotalGames
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Kills
+            </td>
+            <td>
+                @HaloReachStats.TotalKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Deaths
+            </td>
+            <td>
+                @HaloReachStats.TotalDeaths
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Total Assists
+            </td>
+            <td>
+                @HaloReachStats.TotalAssists
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kill Death Ratio
+            </td>
+            <td>
+                @HaloReachStats.KillDeathRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kill Game Ratio
+            </td>
+            <td>
+                @HaloReachStats.KillGameRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Death Game Ratio
+            </td>
+            <td>
+                @HaloReachStats.DeathGameRatio
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Kill Hour Ratio
+            </td>
+            <td>
+                @HaloReachStats.KillHourRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Death Hour Ratio
+            </td>
+            <td>
+                @HaloReachStats.DeathHourRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Medals
+            </td>
+            <td>
+                @HaloReachStats.TotalMedals
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Medals Game Ratio
+            </td>
+            <td>
+                @HaloReachStats.MedalGameRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Medals Hour Ratio
+            </td>
+            <td>
+                @HaloReachStats.MedalHourRatio
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public HaloReachStatModel HaloReachStats { get; set; }
+}

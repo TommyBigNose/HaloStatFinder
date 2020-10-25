@@ -1,0 +1,56 @@
+﻿@page "/Halo2StatsTable"
+
+@using HaloStatFinder.Data
+@using HaloStatFinder.Data.Models
+@inject HaloStatService HaloService
+
+<h2>Halo 2 Stats</h2>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td>
+                Total Games
+            </td>
+            <td>
+                @Halo2Stats.TotalGames
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Played
+            </td>
+            <td>
+                @Halo2Stats.LastPlayed
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Kills
+            </td>
+            <td>
+                @Halo2Stats.TotalKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Deaths
+            </td>
+            <td>
+                @Halo2Stats.TotalDeaths
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Assists
+            </td>
+            <td>
+                @Halo2Stats.TotalAssists
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public Halo2StatModel Halo2Stats { get; set; }
+}

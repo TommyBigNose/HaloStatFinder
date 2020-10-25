@@ -14,251 +14,26 @@ Enter your GamerTag:
 <button id="getStats" class="btn btn-primary" @onclick="GetStats">Get Stats</button>
 <br />
 <br />
-<h2>Halo 2 Stats</h2>
-<table class="table table-striped" style="width:33%;">
+<table class="table" style="width:100%;">
     <tbody>
         <tr>
-            <td>
-                Total Games
+            <td style="width:50%;">
+                <HaloStatFinder.Pages.Halo2StatsTable Halo2Stats="@halo2Stats" />
             </td>
-            <td>
-                @halo2Stats.TotalGames
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Last Played
-            </td>
-            <td>
-                @halo2Stats.LastPlayed
+            <td style="width:50%;">
+                <HaloStatFinder.Pages.Halo3StatsTable Halo3Stats="@halo3Stats" />
             </td>
         </tr>
         <tr>
-            <td>
-                Total Kills
+            <td style="width:50%;">
+                <HaloStatFinder.Pages.HaloReachStatsTable HaloReachStats="@haloReachStats" />
             </td>
-            <td>
-                @halo2Stats.TotalKills
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Deaths
-            </td>
-            <td>
-                @halo2Stats.TotalDeaths
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Assists
-            </td>
-            <td>
-                @halo2Stats.TotalAssists
+            <td style="width:50%;">
             </td>
         </tr>
     </tbody>
 </table>
-<hr />
-<h2>Halo 3 Stats</h2>
-<table class="table table-striped" style="width:33%;">
-    <tbody>
-        <tr>
-            <td>
-                Total Games
-            </td>
-            <td>
-                @halo3Stats.TotalGames
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Exp
-            </td>
-            <td>
-                @halo3Stats.TotalExp
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Highest Skill
-            </td>
-            <td>
-                @halo3Stats.HighestSkill
-            </td>
-        </tr>
 
-        <tr>
-            <td>
-                Ranked KD Ratio
-            </td>
-            <td>
-                @halo3Stats.RankedKdRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Ranked Kills
-            </td>
-            <td>
-                @halo3Stats.TotalRankedKills
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Ranked Deaths
-            </td>
-            <td>
-                @halo3Stats.TotalRankedDeaths
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Ranked Games
-            </td>
-            <td>
-                @halo3Stats.TotalRankedGames
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Social KD Ratio
-            </td>
-            <td>
-                @halo3Stats.SocialKdRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Social Kills
-            </td>
-            <td>
-                @halo3Stats.TotalSocialKills
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Social Deaths
-            </td>
-            <td>
-                @halo3Stats.TotalSocialDeaths
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Social Games
-            </td>
-            <td>
-                @halo3Stats.TotalSocialGames
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr />
-<h2>Halo Reach Competitive Stats</h2>
-<table class="table table-striped" style="width:33%;">
-    <tbody>
-        <tr>
-            <td>
-                Total Games
-            </td>
-            <td>
-                @haloReachStats.TotalGames
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Kills
-            </td>
-            <td>
-                @haloReachStats.TotalKills
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Deaths
-            </td>
-            <td>
-                @haloReachStats.TotalDeaths
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Total Assists
-            </td>
-            <td>
-                @haloReachStats.TotalAssists
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Kill Death Ratio
-            </td>
-            <td>
-                @haloReachStats.KillDeathRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Kill Game Ratio
-            </td>
-            <td>
-                @haloReachStats.KillGameRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Death Game Ratio
-            </td>
-            <td>
-                @haloReachStats.DeathGameRatio
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Kill Hour Ratio
-            </td>
-            <td>
-                @haloReachStats.KillHourRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Death Hour Ratio
-            </td>
-            <td>
-                @haloReachStats.DeathHourRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Total Medals
-            </td>
-            <td>
-                @haloReachStats.TotalMedals
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Medals Game Ratio
-            </td>
-            <td>
-                @haloReachStats.MedalGameRatio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Medals Hour Ratio
-            </td>
-            <td>
-                @haloReachStats.MedalHourRatio
-            </td>
-        </tr>
-    </tbody>
-</table>
 
 @code {
 
