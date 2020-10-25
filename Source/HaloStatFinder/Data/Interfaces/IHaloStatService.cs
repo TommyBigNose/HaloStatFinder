@@ -7,5 +7,6 @@ namespace HaloStatFinder.Data.Interfaces
 	{
 		Task<Halo2StatModel> GetHalo2StatsFromBungie(string gamerTag);
 		Task<Halo3StatModel> GetHalo3StatsFromBungie(string gamerTag);
+		Task<HaloReachStatModel> GetHaloReachStatsFromBungie(string gamerTag);
 	}
 }
