@@ -1,6 +1,14 @@
 # HaloStatFinder
-Will attempt to find your old Halo stats from Bungie's old website/database
+Will attempt to find your old multiplayer Halo stats from Bungie's old website via scrapping the HTML.  
+
+Done wuthin a basic Blazor project in Visual Studio 2019.
 
 # Status
-Currently only searches for Halo 2
-Halo 3 data is a work in progress
+
+- Halo 2
+    - ✅ Basic aggregate stats (Matchmaking & Customs)
+- Halo 3
+    - ✅ Basic aggregate stats (Ranked & Social)
+- Halo Reach
+    - ✅ Competitive Aggregate Stats
+    - ❌ Arena Aggregate Stats

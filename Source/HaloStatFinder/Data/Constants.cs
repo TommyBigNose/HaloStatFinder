@@ -27,5 +27,23 @@
 			public const string TotalSocialDeaths = "";
 			public const string TotalSocialGames = "";
 		}
+
+		public class HaloReachConstants
+		{
+			public const string UrlBase = "https://halo.bungie.net/stats/reach/careerstats/default.aspx?player=SageOfChaos&vc=3";
+			public const string TotalGames = "GamesPlayed";
+			public const string TotalPlaytime = "Playtime";
+			public const string TotalKills = "Kills";
+			public const string TotalDeaths = "Deaths";
+			public const string TotalAssists = "Assists";
+			public const string KillDeathRatio = "Kill/Death";
+			public const string KillGameRatio = "Kills/Game";
+			public const string DeathGameRatio = "Deaths/Game";
+			public const string KillHourRatio = "Kills/Hour";
+			public const string DeathHourRatio = "Deaths/Hour";
+			public const string TotalMedals = "Medals";
+			public const string MedalGameRatio = "Medals/Game";
+			public const string MedalHourRatio = "Medals/Hour";
+		}
 	}
 }

@@ -68,5 +68,34 @@ namespace HaloStatFinder.Tests.Data
 			Assert.IsTrue(result.TotalSocialDeaths == 6929);
 			Assert.IsTrue(result.TotalSocialGames == 855);
 		}
+
+
+		[TestCase("SageOfChaos")]
+		/**
+		 * SageOfChaos : Total Halo Reach Competitive Games: 906
+		 */
+		public async Task GetHaloReachStatsFromBungie_Goldenflow(string gamerTag)
+		{
+
+			// Arrange
+			// Do nothing
+
+			// Act
+			HaloReachStatModel result = await _sut.GetHaloReachStatsFromBungie(gamerTag);
+
+			// Assert
+			Assert.IsTrue(result.TotalGames == 906);
+			Assert.IsTrue(result.TotalKills == 12501);
+			Assert.IsTrue(result.TotalDeaths == 8656);
+			Assert.IsTrue(result.TotalAssists == 1970);
+			Assert.IsTrue(result.KillDeathRatio == float.Parse("1.44"));
+			Assert.IsTrue(result.KillGameRatio == float.Parse("13.80"));
+			Assert.IsTrue(result.DeathGameRatio == float.Parse("9.55"));
+			Assert.IsTrue(result.KillHourRatio == float.Parse("99.43"));
+			Assert.IsTrue(result.DeathHourRatio == float.Parse("68.85"));
+			Assert.IsTrue(result.TotalMedals == 15872);
+			Assert.IsTrue(result.MedalGameRatio == float.Parse("17.52"));
+			Assert.IsTrue(result.MedalHourRatio == float.Parse("126.24"));
+		}
 	}
 }

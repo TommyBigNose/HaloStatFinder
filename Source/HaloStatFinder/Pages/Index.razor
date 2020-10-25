@@ -155,18 +155,123 @@ Enter your GamerTag:
         </tr>
     </tbody>
 </table>
+<hr />
+<h2>Halo Reach Competitive Stats</h2>
+<table class="table table-striped" style="width:33%;">
+    <tbody>
+        <tr>
+            <td>
+                Total Games
+            </td>
+            <td>
+                @haloReachStats.TotalGames
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Kills
+            </td>
+            <td>
+                @haloReachStats.TotalKills
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Deaths
+            </td>
+            <td>
+                @haloReachStats.TotalDeaths
+            </td>
+        </tr>
 
+        <tr>
+            <td>
+                Total Assists
+            </td>
+            <td>
+                @haloReachStats.TotalAssists
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kill Death Ratio
+            </td>
+            <td>
+                @haloReachStats.KillDeathRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kill Game Ratio
+            </td>
+            <td>
+                @haloReachStats.KillGameRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Death Game Ratio
+            </td>
+            <td>
+                @haloReachStats.DeathGameRatio
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Kill Hour Ratio
+            </td>
+            <td>
+                @haloReachStats.KillHourRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Death Hour Ratio
+            </td>
+            <td>
+                @haloReachStats.DeathHourRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Medals
+            </td>
+            <td>
+                @haloReachStats.TotalMedals
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Medals Game Ratio
+            </td>
+            <td>
+                @haloReachStats.MedalGameRatio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Medals Hour Ratio
+            </td>
+            <td>
+                @haloReachStats.MedalHourRatio
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 @code {
 
     public string gamerTag = "";
     Halo2StatModel halo2Stats = new Halo2StatModel();
     Halo3StatModel halo3Stats = new Halo3StatModel();
+    HaloReachStatModel haloReachStats = new HaloReachStatModel();
 
 
     public async Task GetStats()
     {
         halo2Stats = await HaloService.GetHalo2StatsFromBungie(gamerTag);
         halo3Stats = await HaloService.GetHalo3StatsFromBungie(gamerTag);
+        haloReachStats = await HaloService.GetHaloReachStatsFromBungie(gamerTag);
     }
 }
